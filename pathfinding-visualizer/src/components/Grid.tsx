@@ -48,7 +48,7 @@ export function Grid({isVisualizationRunningRef}:{isVisualizationRunningRef:Muta
     <div
       className={twMerge(
         //base class
-        "flex items-center flex-col justify-center border-sky-400",
+        "flex items-center flex-col justify-center border-sky-400 mt-10",
         //Control Grid height
         `lg:min-h-[${MAX_ROWS * 17}px] 
             md:min-h-[${MAX_ROWS * 15}px]
