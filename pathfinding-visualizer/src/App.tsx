@@ -6,17 +6,16 @@ import { TileProvider } from "./context/TileContext";
 import { Nav } from "./components/Nav";
 
 function App() {
-
   const isVisualizationRunningRef = useRef(false);
 
   return (
     <PathfindingProvider>
       <TileProvider>
         <SpeedProvider>
-        <div className="h-screen w-screen flex flex-col">
-          <Nav/>
-          <Grid isVisualizationRunningRef={isVisualizationRunningRef}/>
-        </div>
+          <div className="h-screen w-screen flex flex-col">
+            <Nav />
+            <Grid isVisualizationRunningRef={isVisualizationRunningRef} />
+          </div>
         </SpeedProvider>
       </TileProvider>
     </PathfindingProvider>

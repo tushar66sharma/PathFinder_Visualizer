@@ -1,23 +1,27 @@
 import { createContext, useState, type ReactNode } from "react";
 import type { TileType } from "../utils/types";
-import { END_TILE_CONFIGURATION, START_TILE_CONFIGURATION } from "../utils/constants";
-
-
+import {
+  END_TILE_CONFIGURATION,
+  START_TILE_CONFIGURATION,
+} from "../utils/constants";
 
 interface TileContextInterface {
   startTile: TileType;
-  setStartTile:(startTile:TileType)=>void;
+  setStartTile: (startTile: TileType) => void;
   endTile: TileType;
-  setEndTile:(endTile:TileType)=>void;
-
+  setEndTile: (endTile: TileType) => void;
 }
 
-export const TileContext = createContext<TileContextInterface | undefined>(undefined);
+export const TileContext = createContext<TileContextInterface | undefined>(
+  undefined
+);
 
 export const TileProvider = ({ children }: { children: ReactNode }) => {
-  const [startTile, setStartTile] = useState<TileType>(START_TILE_CONFIGURATION);
+  const [startTile, setStartTile] = useState<TileType>(
+    START_TILE_CONFIGURATION
+  );
   const [endTile, setEndTile] = useState<TileType>(END_TILE_CONFIGURATION);
-  
+
   return (
     <TileContext.Provider
       value={{
@@ -25,7 +29,6 @@ export const TileProvider = ({ children }: { children: ReactNode }) => {
         setStartTile,
         endTile,
         setEndTile,
-        
       }}
     >
       {children}
