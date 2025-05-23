@@ -8,6 +8,7 @@ import { Select } from "./Select";
 import { useSpeed } from "../hooks/useSpeed";
 import { runMazeAlgorithm } from "../utils/runMazeAlgorithm";
 import { PlayButton } from "./PlayButton";
+import { runPathfindingAlgorithm } from "../utils/runPathfindingAlgorithms";
 
 
 
@@ -49,6 +50,14 @@ export function Nav(){
         }
 
         /// run Graph algorithms
+        const {traversedTiles,path} = runPathfindingAlgorithm({
+            algorithm,
+            grid,
+            startTile,
+            endTile,
+        })
+        console.log('traversedTiles',traversedTiles);
+        console.log('path',path);
     }
 
 
@@ -72,6 +81,7 @@ export function Nav(){
                     <Select
                         label='Graph'
                         value={algorithm}
+                        isDisabled={isDisabled}
                         options={PATHFINDING_ALGORITHMS}
                         onChange={(e)=>{
                             setAlgorithm(e.target.value as AlgorithmType);
@@ -80,7 +90,7 @@ export function Nav(){
                     <PlayButton
                         isDisabled={isDisabled}
                         isGraphVisualized={isGraphVisualized}
-                        handleRunVisualizer={()=>{}}
+                        handleRunVisualizer={handleRunVisualizer}
                     />
                 </div>
 

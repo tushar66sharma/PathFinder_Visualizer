@@ -16,7 +16,7 @@ export const getUntraversedNeighbour=(grid:GridType ,tile:TileType)=>{
     if(col>0){
         neighbour.push(grid[row][col-1]);
     }
-    if(col>MAX_COLS-1){
+    if(col<MAX_COLS-1){
         neighbour.push(grid[row][col+1]);
     }
 
