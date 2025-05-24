@@ -56,3 +56,5 @@ export const PATHFINDING_ALGORITHMS :AlgorithmSelectType[]=[
   {name:"Breath First Search",value:"BFS"},
   {name:"Depth First Search",value:"DFS"},
 ];
+
+export const EXTENDED_SLEEP_TIME=30;
